@@ -12,4 +12,4 @@ applicable law makes mandatory or rights granted through GitHub under its terms
 of service.
 
 These terms cover the project's own software. Python and third-party packages
-are obtained separately and remain under their respective licenses.
+retain their respective licenses, including the bundled libsamplerate DLL.
