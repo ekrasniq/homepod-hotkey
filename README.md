@@ -1,23 +1,31 @@
 # HomePod Hotkey
 
-Stream Windows 11 audio to a HomePod. Press **Ctrl + Shift + H** to switch from your PC speakers to the HomePod. Move the usual Windows volume slider to change the HomePod volume. Press the shortcut again to restore your PC speakers and their previous volume.
+Stream Windows 11 audio to a HomePod. Press **Ctrl + Shift + H** once and **allow a few seconds for the PC to find and connect to the HomePod**. Move the usual Windows volume slider to change the HomePod volume. Press the shortcut again to restore your PC speakers and their previous volume.
 
-[Download the Windows 11 preview](https://github.com/ekrasniq/homepod-hotkey/releases/tag/v0.1.0) · [Watch the 20-second illustrated walkthrough](https://github.com/ekrasniq/homepod-hotkey/releases/download/v0.1.0/homepod-hotkey-demo.mp4)
+[Download the Windows 11 preview](https://github.com/ekrasniq/homepod-hotkey/releases/tag/v0.2.0) · [Watch the 20-second illustrated walkthrough](https://github.com/ekrasniq/homepod-hotkey/releases/download/v0.1.0/homepod-hotkey-demo.mp4)
 
 ![Illustration of the shortcut switching audio to a HomePod](https://raw.githubusercontent.com/ekrasniq/homepod-hotkey/main/media/walkthrough.png)
 
 ## Set up
 
 1. Use Windows 11 on an x64 PC with **64-bit Python 3.12** installed. The PC and HomePod need to be on the same local network with AirPlay access. [Python 3.12 for Windows](https://www.python.org/downloads/release/python-31210/)
-2. Download **homepod-hotkey-0.1.0-win11-x64.zip** from the release. Extract it to a folder you intend to keep.
+2. Download **homepod-hotkey-0.2.0-win11-x64.zip** from the release. Extract it to a folder you intend to keep. To update an existing installation, stop its stream, extract over the same folder and run setup again.
 3. Double-click **Setup.cmd**. It downloads the Python packages listed in `requirements.txt` into a virtual environment in that folder and creates a per-user **HomePod Hotkey** Start menu shortcut. No additional audio driver is required.
-4. Play something at a comfortable volume. Press **Ctrl + Shift + H**, wait for the HomePod to connect, then try the Windows volume slider. Press the shortcut again to switch back. The Start menu entry does the same thing.
+4. Play something at a comfortable volume. Press **Ctrl + Shift + H** once. Allow a few seconds for the connection, then try the Windows volume slider. A second press switches back to your PC. The Start menu entry does the same thing.
 
 **Multiple HomePods?** Open a terminal in the extracted folder and run `.\Setup.cmd --device "Kitchen"`, replacing Kitchen with your HomePod name. Re-run setup after moving the folder. If another app uses the shortcut, open **HomePod Hotkey** from Start.
 
+## Adjust the HomePod sound
+
+The equalizer opens when you connect. All three sliders work during playback and affect only the audio sent to the HomePod. For a first listen to the strings in Hans Zimmer’s *Time*, try **Tiefen** (bass) at **−2 dB**, **Mitten** (mids) at **+2 dB** and **Höhen** (treble) at **0 dB**. Switch between **Neutral** and **Mein Klang** to compare. The sender remembers your settings for the next connection.
+
+Close the window with **X** to keep listening. Press **Ctrl + Shift + K** to show it again. If another app already uses that shortcut, the window shows the available alternative.
+
+![The three live tone controls and the Neutral comparison in one Windows window](https://raw.githubusercontent.com/ekrasniq/homepod-hotkey/v0.2.0/media/equalizer.png)
+
 ## Tested on Windows 11
 
-One first-generation HomePod played system audio with the PC speakers muted, responded to the Windows slider and switched back using the shortcut. A microphone measurement on this setup put the delay from Windows audio capture to sound at **about 0.35 seconds**. This measures continuous playback. Connection startup takes longer. Audio is sent as 16-bit stereo at 44.1 kHz on the tested device.
+The 0.1.0 preview played system audio on a first-generation HomePod with the PC speakers muted, responded to the Windows slider and switched back using the shortcut. A microphone measurement during continuous playback on that setup put the delay from Windows audio capture to sound at **about 0.35 seconds**. Audio was sent as 16-bit stereo at 44.1 kHz. The 0.2.0 equalizer was tested with synthetic audio on Windows 11.
 
 HomePod mini, stereo pairs and other Windows audio drivers still need testing. Some drivers may also silence loopback capture when the local output is muted.
 
