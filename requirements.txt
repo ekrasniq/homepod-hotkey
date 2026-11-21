@@ -1,0 +1,6 @@
+pyatv==0.18.0
+PyAudioWPatch==0.2.12.9
+srptools==1.0.1
+pycaw==20260927
+numpy==2.3.5
+samplerate==0.2.4

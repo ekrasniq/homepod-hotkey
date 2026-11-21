@@ -1,0 +1,15 @@
+HomePod Hotkey — Use License
+Copyright 2026 HomePod Hotkey contributors. All rights reserved.
+
+You may download, install, make copies necessary for use or backup, and run the
+official, unmodified releases of HomePod Hotkey free of charge. You may share a
+link to the official release page.
+
+No permission is granted to modify the application, create derivative versions,
+or redistribute the application, in whole or in part, without prior written
+permission from the rights holder. This license does not restrict rights that
+applicable law makes mandatory or rights granted through GitHub under its terms
+of service.
+
+These terms cover the project's own software. Python and third-party packages
+are obtained separately and remain under their respective licenses.
